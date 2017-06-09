@@ -2,5 +2,8 @@
 	background-color: gray;
 	height: 100px;
 	margin: 2px;
-
+	color: #fff;
+	font-size: 40px;
+	text-align: middle middle;
+	padding-top: 25px;
 }
