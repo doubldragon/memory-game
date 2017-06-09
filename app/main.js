@@ -1,8 +1,10 @@
 function cardController($scope) {
 	$scope.player1_turn = true;
+	$scope.player1_score = 0;
+	$scope.player2_score = 0;
     $scope.deckSize = 52;
     $scope.deck = [];
-    $scope.suits = [' ♠', ' ♣', ' ♡', ' ♢'];
+    $scope.suits = ['♠', '♣', '♡', '♢'];
     $scope.values = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
     $scope.revealed = 0;
     $scope.pair = [];
@@ -78,13 +80,19 @@ function cardController($scope) {
 	            		console.log(each.id);
 	            		each.matched = true;
 	            		console.log("Each:", each);
-	            	}); 
+	            	});
+	    if ($scope.player1_turn){
+	    	 $scope.player1_score++ 
+	    	} else {
+	    		$scope.player2_score++;
+	    	};
         $scope.pair = [];
 
     }
 
     $scope.notMatch = function() {
             console.log("It's NOT a match!");
+            $scope.player1_turn = !$scope.player1_turn;
             setTimeout(function() {
             	console.log("Done with timeout")
 	            $scope.pair.forEach( 
@@ -94,6 +102,7 @@ function cardController($scope) {
 	            		each.selected = false;
 	            		console.log("Each:", each);
 	            	}); 
+
         		$scope.pair = [];
         	} 
         	, 250);

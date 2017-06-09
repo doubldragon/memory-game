@@ -9,21 +9,21 @@
 </head>
 
 <body ng-app="app" ng-controller="cardController">
-    <div class="col-xs-12">
+    <div class="col-xs-12 text-center">
         <div class="col-xs-3">
-            <h2>Player 1<h2>
+            <p class="text-right">Player 1: {{player1_score}}</p>
 		</div>
 		<div class="col-xs-1">
-			<p>◀</p>
+			<p ng-show="player1_turn">◀</p>
 		</div>
 		<div class="col-xs-4">
 			<h1>Memory Game</h1>
 		</div>
 		<div class="col-xs-1">
-			<p>▶</p>
+			<p ng-show="!player1_turn">▶</p>
 		</div>
 		<div class="col-xs-3">
-			<h3>Player 2</h3>
+			<p class="text-left">Player 2: {{player2_score}}</p>
 		</div>
 	</div>
 	<div class='tile col-xs-1 text-center' ng-repeat="card in deck" ng-click="clickCard(card)" ng-class="{selected : card.selected, revealed : card.revealed, matched : card.matched}"><div class="card-info" ng-class=" {card_matched : card.matched}" ng-show="card.revealed">{{card.id}}{{card.suit}}</div></div>
