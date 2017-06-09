@@ -1,9 +1,29 @@
 .tile { 
-	background-color: gray;
+	background-color: #ccc;
 	height: 100px;
 	margin: 2px;
-	color: #fff;
-	font-size: 40px;
+	cursor: pointer;
 	text-align: middle middle;
 	padding-top: 25px;
+	border-radius: 5px;
+	border: 2px solid #ccc;
+	transition-duration: .5s;
+}
+
+.card-info {
+	color: #ccc;
+	font-size: 40px;
+}
+
+.revealed {
+	background-color: #fff;
+	color: #ccc;
+	height: 100px;
+	margin: 2px;
+	cursor: pointer;
+	text-align: middle middle;
+	padding-top: 25px;
+	border-radius: 5px;
+	border: 2px solid #ccc;
+	transition-duration: .5s;
 }

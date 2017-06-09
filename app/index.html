@@ -9,7 +9,8 @@
 </head>
 <body ng-app="app" ng-controller="cardController">
 	<h1>Memory Game</h1>
-	<div class='tile col-sm-2 col-md-2 text-center' ng-repeat="card in deck">{{card}}</div>
+
+	<div class='tile col-sm-2 col-md-2 text-center' ng-repeat="card in deck" ng-click="revealCard(card)" ng-class="{revealed : card.revealed}"><div class="card-info" ng-show="card.revealed">{{card.id}}{{card.suit}}</div></div>
 
 
 
